@@ -27,14 +27,14 @@ int movementBottom;
 // 把value加到stacks[tower]的頂端(最後)
 void stackPush(int tower, int value)
 {
+	// Fill in the code
 	stacks.stack[tower][stacks.length[tower]++] = value;
-
 }
 
 // 將stacks[tower]的頂端(最後)的值取出
 int stackPop(int tower)
 {
-
+	// Fill in the code
 	return stacks.stack[tower][--stacks.length[tower]];
 }
 
@@ -47,13 +47,13 @@ int movementLenth()
 
 void movementEnqueue(Movement m)
 {
+	// Fill in the code
 	movements[++movementHead] = m;
-
 }
 
 Movement movementDequeue()
 {
-
+	// Fill in the code
 	return movements[++movementBottom];
 }
 
@@ -62,6 +62,7 @@ Movement movementDequeue()
 // 將movement依序Enqueue至陣列movements中
 void genHanoiMovements(int layer, int from = 0, int to = 2, int tmp = 1)
 {
+	// Fill in the code
 	if (layer == 0) return;
 	genHanoiMovements(layer - 1, from, tmp, to);
 	movementEnqueue(Movement{ from, to });
@@ -77,6 +78,7 @@ hanoi::Stacks hanoi::getStacks()
 // 由main function每秒呼叫一次
 hanoi::Stacks hanoi::nextStacks()
 {
+	// Fill in the code
 	Movement move = movementDequeue();
 	int mm = stackPop(move.from);
 	stackPush(move.to, mm);
